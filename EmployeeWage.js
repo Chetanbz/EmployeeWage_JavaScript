@@ -4,15 +4,18 @@ const IS_FULL_TIME = 2;
 const PART_TIME_HRS = 4;
 const FULL_TIME_HRS = 8;
 const WAGE_PER_HOURS = 20;
-
+const maxWorkDay = 20;
 let empHrs = 0;
-let totalEmployeeWage = 0;
-let employeeType = Math.floor(Math.random()*10)%3;
+let monthWorkHrs =0 ;
+let employeeType;
 
+for (var i = 1; i <= maxWorkDay; i++){
+    employeeType = Math.floor(Math.random()*10)%3;
+    monthWorkHrs += calculateEmpHrs(employeeType);
+}
 
-totalEmployeeWage = calculateEmpHrs(employeeType)*WAGE_PER_HOURS;
-console.log("Employee Wage is " + totalEmployeeWage );
-
+let totalMonthWage = monthWorkHrs*WAGE_PER_HOURS;
+console.log("Total Employee Hrs " + monthWorkHrs+ " Employee Month Wgae is " + totalMonthWage);
 
 function calculateEmpHrs(employeeType){
     if(employeeType == IS_PART_TIME){
