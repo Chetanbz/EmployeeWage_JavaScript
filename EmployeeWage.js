@@ -11,6 +11,8 @@ let empHrs = 0;
 var monthWorkHrs =0 ;
 let employeeType;
 
+let dailyWageArray = new Array();
+
 for (var i = 1; i <= maxWorkDay; i++){
     employeeType = Math.floor(Math.random()*10)%3;
     monthWorkHrs += calculateEmpHrs(employeeType);
@@ -19,6 +21,7 @@ for (var i = 1; i <= maxWorkDay; i++){
         break;
     }
 }
+console.log("Daily Wage is "+ dailyWageArray);
 
 let totalMonthWage = monthWorkHrs*WAGE_PER_HOURS;
 console.log("Total Employee Hrs " + monthWorkHrs+ " Employee Month Wgae is " + totalMonthWage);
@@ -30,5 +33,6 @@ function calculateEmpHrs(employeeType){
     else if (employeeType == IS_FULL_TIME){
         empHrs = 8 ;
     }
+    dailyWageArray.push(empHrs*WAGE_PER_HOURS);
     return empHrs;
 }
