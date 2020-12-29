@@ -102,21 +102,3 @@ console.log("No work days " + noWorkDays);
 
 
 
-
-
-
-let totalEmpWage = 0;
-function sum(dailyWage){
-    totalEmpWage += dailyWage;
-}
-dailyWageArray.forEach(sum);
-
-function totalWages (totalWage,dailyWage){
-    return totalWage +dailyWage;
-}
-
-let dailycntrl = 0;
-function mapDayWithWage(dailyWage){
-    dailycntr++
-}
-
